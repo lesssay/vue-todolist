@@ -29,14 +29,18 @@ const root = new Vue({
     el: '#to-do-list',
     data: {
         tasks: [
-            { text: 'spesa', done: 'true' },
-            { text: 'posta', done: 'false' },
-            { text: 'parrucchiere', done: 'true' },
-            { text: 'regalo a mamma', done: 'false' },
-            { text: 'chiamare commercialista', done: 'false' }
+            { text: 'spesa', done: false },
+            { text: 'posta', done: false },
+            { text: 'parrucchiere', done: false },
+            { text: 'regalo a mamma', done: false },
+            { text: 'chiamare commercialista', done: false }
         ],
 
         newTask: { text: '', done: 'false' },
+    },
+
+    computed: {
+
     },
 
 
@@ -47,6 +51,10 @@ const root = new Vue({
 
         addTask() {
             this.tasks.push(this.newTask);
+        },
+
+        isDone(index) {
+            return this.tasks[index].done = !this.tasks[index].done;
         }
     }
 

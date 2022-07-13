@@ -26,13 +26,18 @@
         <div class="row">
             <div class="col-8 offset-2">
                 <h1 class="text-primary text-center">TO DO LIST</h1>
+
                 <ul class="list-group list-group-flush">
+
                     <li v-for="(task, i) in tasks"
                         class="list-group-item d-flex justify-content-between"
-                        :class="{'text-decoration-line-through' : task.done === 'true'}">
-                        {{task.text.toUpperCase()}}
+                        :class="{'text-decoration-line-through' : task.done === true}">
+
+                        <span @click="isDone(i)">{{task.text.toUpperCase()}}</span>
+
                         <i class="bi bi-trash3-fill text-primary" @click="removeTask(i)"></i>
                     </li>
+
                     <li class="list-group-item mt-3 d-flex">
 
                         <input type="text" placeholder="Aggiungi nuovo task"
@@ -42,6 +47,7 @@
                         <button type="button" class="btn btn-outline-primary"
                             @click="addTask">Aggiungi</button>
                     </li>
+
                 </ul>
             </div>
         </div>
