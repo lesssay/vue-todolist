@@ -34,12 +34,20 @@ const root = new Vue({
             { text: 'parrucchiere', done: 'true' },
             { text: 'regalo a mamma', done: 'false' },
             { text: 'chiamare commercialista', done: 'false' }
-        ]
+        ],
+
+        newTask: { text: '', done: 'false' },
     },
+
 
     methods: {
         removeTask(index) {
             this.tasks.splice(index, 1);
+        },
+
+        addTask() {
+            this.tasks.push(this.newTask);
         }
     }
+
 });
