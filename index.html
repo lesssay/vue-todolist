@@ -30,8 +30,14 @@
                     <li v-for="(task, i) in tasks"
                         class="list-group-item d-flex justify-content-between"
                         :class="{'text-decoration-line-through' : task.done === 'true'}">
-                        {{task.text.toUpperCase()}}<i class="bi bi-trash3-fill"></i></li>
-                    <li class="list-group-item"></li>
+                        {{task.text.toUpperCase()}}
+                        <i class="bi bi-trash3-fill" @click="removeTask(i)"></i>
+                    </li>
+                    <li class="list-group-item mt-3 d-flex">
+                        <input type="text" placeholder="Aggiungi nuovo task"
+                            class="form-control me-3">
+                        <button type="button" class="btn btn-outline-dark">Aggiungi</button>
+                    </li>
                 </ul>
             </div>
         </div>

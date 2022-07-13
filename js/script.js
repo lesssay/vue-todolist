@@ -36,4 +36,10 @@ const root = new Vue({
             { text: 'chiamare commercialista', done: 'false' }
         ]
     },
+
+    methods: {
+        removeTask(index) {
+            this.tasks.splice(index, 1);
+        }
+    }
 });
