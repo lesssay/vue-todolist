@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue To Do List</title>
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
     <!-- BOOTSTRAP -->
@@ -28,7 +28,8 @@
                 <h1>TO DO LIST</h1>
                 <ul class="list-group list-group-flush">
                     <li v-for="(task, i) in tasks"
-                        class="list-group-item d-flex justify-content-between">
+                        class="list-group-item d-flex justify-content-between"
+                        :class="{'text-decoration-line-through' : task.done === 'true'}">
                         {{task.text.toUpperCase()}}<i class="bi bi-trash3-fill"></i></li>
                     <li class="list-group-item"></li>
                 </ul>
