@@ -40,7 +40,12 @@ const root = new Vue({
     },
 
     computed: {
-
+        // tasksUpperCaseArray() {
+        //     const tasksUpperCaseArray = this.tasks.map((task) => {
+        //         this.task.text = this.task.text.toUpperCase();
+        //         return task.text;
+        //     });
+        //     return tasksUpperCaseArray;
     },
 
 
@@ -50,11 +55,16 @@ const root = new Vue({
         },
 
         addTask() {
-            this.tasks.push(this.newTask);
+            if (this.newTask.text) {
+                this.tasks.push(this.newTask);
+                this.newTask = {
+                    text: '', done: false
+                }
+            }
         },
 
-        isDone(index) {
-            return this.tasks[index].done = !this.tasks[index].done;
+        toggleDone(index) {
+            this.tasks[index].done = !this.tasks[index].done;
         }
     }
 

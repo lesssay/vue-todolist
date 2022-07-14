@@ -30,12 +30,14 @@
                 <ul class="list-group list-group-flush">
 
                     <li v-for="(task, i) in tasks"
-                        class="list-group-item d-flex justify-content-between"
-                        :class="{'text-decoration-line-through' : task.done === true}">
+                        class="list-group-item d-flex justify-content-between">
 
-                        <span @click="isDone(i)">{{task.text.toUpperCase()}}</span>
+                        <span role="button"
+                            :class="{'text-decoration-line-through' : task.done === true}"
+                            @click="toggleDone(i)">{{task.text.toUpperCase()}}</span>
 
-                        <i class="bi bi-trash3-fill text-primary" @click="removeTask(i)"></i>
+                        <i class="bi bi-trash3-fill text-primary" role="button"
+                            @click="removeTask(i)"></i>
                     </li>
 
                     <li class="list-group-item mt-3 d-flex">
