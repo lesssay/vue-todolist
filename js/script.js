@@ -36,18 +36,19 @@ const root = new Vue({
             { text: 'chiamare commercialista', done: false }
         ],
 
-        newTask: { text: '', done: 'false' },
+        newTaskText: ''
     },
+    // ESEMPIO DI COMPUTED SOLO PER CAPIRE COME FUNZIONA
 
-    computed: {
-        // tasksUpperCaseArray() {
-        //     const tasksUpperCaseArray = this.tasks.map((task) => {
-        //         this.task.text = this.task.text.toUpperCase();
-        //         return task.text;
-        //     });
-        //     return tasksUpperCaseArray;
-    },
+    /* computed: {
+        tasksUpperCaseArray() {
+            return this.tasks.map((task) => {
+                task.text = task.text.toUpperCase();
+                return task;
+            });
+        },
 
+    }, */
 
     methods: {
         removeTask(index) {
@@ -55,11 +56,9 @@ const root = new Vue({
         },
 
         addTask() {
-            if (this.newTask.text) {
-                this.tasks.push(this.newTask);
-                this.newTask = {
-                    text: '', done: false
-                }
+            if (this.newText) {
+                const newTask = { text: this.newText, done: false };
+                this.tasks.push(newTask);
             }
         },
 
