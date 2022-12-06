@@ -56,8 +56,8 @@ const root = new Vue({
         },
 
         addTask() {
-            if (this.newText) {
-                const newTask = { text: this.newText, done: false };
+            if (this.newTaskText) {
+                const newTask = { text: this.newTaskText, done: false };
                 this.tasks.push(newTask);
             }
         },
